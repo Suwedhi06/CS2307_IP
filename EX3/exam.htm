@@ -1,0 +1,223 @@
+```java
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/ExamServlet")
+public class ExamServlet extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest request,
+                           HttpServletResponse response)
+            throws ServletException, IOException {
+
+        // Get answers submitted by the user
+        String q1 = request.getParameter("q1");
+        String q2 = request.getParameter("q2");
+        String q3 = request.getParameter("q3");
+        String q4 = request.getParameter("q4");
+
+        // Handle empty answers
+        if (q1 == null) q1 = "Not answered";
+        if (q2 == null) q2 = "Not answered";
+        if (q3 == null) q3 = "";
+        if (q4 == null) q4 = "";
+
+        // Calculate score
+        int score = 0;
+
+        if (q1.equalsIgnoreCase("HTML")) {
+            score++;
+        }
+
+        if (q2.equalsIgnoreCase("p")) {
+            score++;
+        }
+
+        if (q3.trim().equalsIgnoreCase("HyperText Markup Language")) {
+            score++;
+        }
+
+        if (q4.trim().equalsIgnoreCase("CSS")) {
+            score++;
+        }
+
+        response.setContentType("text/html;charset=UTF-8");
+
+        PrintWriter out = response.getWriter();
+
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Exam Result</title>");
+
+        out.println("<style>");
+
+        out.println("""
+            body {
+                font-family: Arial, sans-serif;
+                background: #eef7ff;
+                margin: 0;
+                padding: 40px 20px;
+                color: #334155;
+            }
+
+            .result-container {
+                max-width: 650px;
+                margin: auto;
+                background: white;
+                padding: 35px;
+                border-radius: 16px;
+                box-shadow: 0 5px 20px rgba(100, 150, 200, 0.18);
+            }
+
+            h1 {
+                text-align: center;
+                color: #2563eb;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                text-align: center;
+                color: #64748b;
+                margin-bottom: 30px;
+            }
+
+            .score {
+                text-align: center;
+                background: #eff6ff;
+                border: 1px solid #bfdbfe;
+                padding: 20px;
+                border-radius: 12px;
+                margin-bottom: 25px;
+            }
+
+            .score h2 {
+                color: #2563eb;
+                margin: 0;
+                font-size: 30px;
+            }
+
+            .answer {
+                background: #f8fbff;
+                border: 1px solid #dbeafe;
+                padding: 15px;
+                margin-bottom: 12px;
+                border-radius: 9px;
+            }
+
+            .answer strong {
+                color: #1e40af;
+            }
+
+            .correct {
+                color: #16a34a;
+                font-weight: bold;
+            }
+
+            .wrong {
+                color: #dc2626;
+                font-weight: bold;
+            }
+
+            .button-area {
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .button {
+                display: inline-block;
+                padding: 12px 25px;
+                background: #60a5fa;
+                color: white;
+                text-decoration: none;
+                border-radius: 8px;
+            }
+
+            .button:hover {
+                background: #3b82f6;
+            }
+        """);
+
+        out.println("</style>");
+        out.println("</head>");
+        out.println("<body>");
+
+        out.println("<div class='result-container'>");
+
+        out.println("<h1>Exam Result</h1>");
+        out.println("<p class='subtitle'>Your examination has been submitted successfully.</p>");
+
+        out.println("<div class='score'>");
+        out.println("<h2>" + score + " / 4</h2>");
+        out.println("<p>Final Score</p>");
+        out.println("</div>");
+
+        // Question 1
+        out.println("<div class='answer'>");
+        out.println("<strong>Question 1:</strong> Which language is used to create a web page?<br>");
+        out.println("Your Answer: " + q1 + "<br>");
+
+        if (q1.equalsIgnoreCase("HTML")) {
+            out.println("<span class='correct'>Correct Answer ✓</span>");
+        } else {
+            out.println("<span class='wrong'>Incorrect ✗ &nbsp; Correct Answer: HTML</span>");
+        }
+
+        out.println("</div>");
+
+        // Question 2
+        out.println("<div class='answer'>");
+        out.println("<strong>Question 2:</strong> Which tag is used to create a paragraph in HTML?<br>");
+        out.println("Your Answer: &lt;" + q2 + "&gt;<br>");
+
+        if (q2.equalsIgnoreCase("p")) {
+            out.println("<span class='correct'>Correct Answer ✓</span>");
+        } else {
+            out.println("<span class='wrong'>Incorrect ✗ &nbsp; Correct Answer: &lt;p&gt;</span>");
+        }
+
+        out.println("</div>");
+
+        // Question 3
+        out.println("<div class='answer'>");
+        out.println("<strong>Question 3:</strong> What does HTML stand for?<br>");
+        out.println("Your Answer: " + q3 + "<br>");
+
+        if (q3.trim().equalsIgnoreCase("HyperText Markup Language")) {
+            out.println("<span class='correct'>Correct Answer ✓</span>");
+        } else {
+            out.println("<span class='wrong'>Incorrect ✗ &nbsp; Correct Answer: HyperText Markup Language</span>");
+        }
+
+        out.println("</div>");
+
+        // Question 4
+        out.println("<div class='answer'>");
+        out.println("<strong>Question 4:</strong> Which language is used to style HTML pages?<br>");
+        out.println("Your Answer: " + q4 + "<br>");
+
+        if (q4.trim().equalsIgnoreCase("CSS")) {
+            out.println("<span class='correct'>Correct Answer ✓</span>");
+        } else {
+            out.println("<span class='wrong'>Incorrect ✗ &nbsp; Correct Answer: CSS</span>");
+        }
+
+        out.println("</div>");
+
+        out.println("<div class='button-area'>");
+        out.println("<a class='button' href='index.html'>Take Exam Again</a>");
+        out.println("</div>");
+
+        out.println("</div>");
+
+        out.println("</body>");
+        out.println("</html>");
+    }
+}
+```
