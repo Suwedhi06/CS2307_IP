@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cricket Tournament Results</title>
+    <style>
+        /* Simple layout styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Basic neat table styling */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        /* Basic Team Color Styling */
+        .csk-team { color: #cc9900; font-weight: bold; }
+        .mi-team { color: #003399; font-weight: bold; }
+        .rcb-team { color: #cc0000; font-weight: bold; }
+
+        /* WINNING SCORE STYLING: Larger, different color, and bold */
+        .winning-score {
+            font-size: 22px;
+            color: #28a745;
+            font-weight: bold;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* Losing score styling */
+        .losing-score {
+            font-size: 14px;
+            color: #777777;
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Cricket Match Results</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Match</th>
+                <th>Team 1</th>
+                <th>Team 2</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Match 1</td>
+                <td class="csk-team">Chennai<br><span class="winning-score">182/4</span></td>
+                <td class="mi-team">Mumbai<br><span class="losing-score">179/7</span></td>
+                <td>Chennai won by 3 runs</td>
+            </tr>
+            <tr>
+                <td>Match 2</td>
+                <td class="rcb-team">Bangalore<br><span class="losing-score">155/10</span></td>
+                <td class="csk-team">Chennai<br><span class="winning-score">159/3</span></td>
+                <td>Chennai won by 7 wickets</td>
+            </tr>
+            <tr>
+                <td>Match 3</td>
+                <td class="mi-team">Mumbai<br><span class="winning-score">210/5</span></td>
+                <td class="rcb-team">Bangalore<br><span class="losing-score">162/8</span></td>
+                <td>Mumbai won by 48 runs</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

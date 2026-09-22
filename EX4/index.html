@@ -1,1 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamaraj College of Engineering | Home</title>
+    <style>
+        /* Base Page Setup */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers everything on the screen */
+        }
 
+        /* Full Width Header Container */
+        header {
+            background-color: #003366; /* Deep navy college theme */
+            color: #ffffff;
+            width: 100%;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin: 10px 0 20px 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Center Navigation Menu Bar */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Centers navigation links */
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #0056b3; /* Highlight link hover effect */
+        }
+
+        /* Center-Aligned Main Body Block */
+        main {
+            max-width: 900px;
+            width: 90%;
+            margin: 40px 0;
+            background-color: #ffffff;
+            padding: 40px;
+            box-sizing: border-box;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-align: center; /* Centers all content columns */
+        }
+
+        /* Section Layouts */
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #003366;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Section divider line */
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #0056b3;
+            margin: 8px auto 0 auto;
+        }
+
+        /* Center Image Elements Layout */
+        figure {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        figcaption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        /* Centered Block for List Items */
+        .list-container {
+            display: inline-block;
+            text-align: left; /* Text stays left-readable, block stays centered */
+            background-color: #f8fafc;
+            padding: 20px 40px;
+            border-radius: 6px;
+            border-left: 4px solid #0056b3;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            padding: 6px 0;
+            font-size: 1.05rem;
+            color: #333333;
+        }
+
+        /* Centered Grid Data Table */
+        table {
+            margin: 25px auto;
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #003366;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* Centered User Input Contact Form */
+        form {
+            display: inline-block;
+            text-align: left; /* Labels stay over fields, form stays centered */
+            max-width: 450px;
+            width: 100%;
+            background-color: #f8fafc;
+            padding: 30px;
+            border-radius: 6px;
+            box-sizing: border-box;
+            border: 1px solid #e2e8f0;
+        }
+
+        form p {
+            margin: 0 0 20px 0;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333333;
+            font-size: 0.95rem;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #002244;
+        }
+
+        /* Footer Container */
+        footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navigation Header Bar -->
+    <header>
+        <h1>Kamaraj College of Engineering</h1>
+        <p>Welcome to our college website</p>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#timings">Timings</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Presentation -->
+    <main>
+
+        <!-- About Section -->
+        <section id="home">
+            <h2>About Us</h2>
+            <figure>
+                <img src="https://images.shiksha.com/mediadata/images/1747634757phphVw7pN.jpeg" alt="Kamaraj College Campus Building">
+            </figure>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #4a5568; max-width: 700px; margin: 20px auto 0 auto;">
+                Kamaraj College provides quality education, fostering innovation and excellent academic facilities for future leaders.
+            </p>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses">
+            <h2>Courses Offered</h2>
+            <p style="color: #4a5568; margin-bottom: 20px;">We offer industry-standard engineering and technology programs:</p>
+            <div class="list-container">
+                <ul>
+                    <li>Computer Science and Engineering</li>
+                    <li>Information Technology</li>
+                    <li>Mechanical Engineering</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- College Timings Section -->
+        <section id="timings">
+            <h2>College Timings</h2>
+            <table>
+                <caption>Weekly Academic Schedule</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Day</th>
+                        <th scope="col">Operating Hours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday - Friday</td>
+                        <td>9:00 AM - 4:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>9:00 AM - 1:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>Closed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p style="color: #4a5568; margin-bottom: 25px;">Have questions? Reach out to our admissions office directly.</p>
+            <form action="#" method="POST">
+                <p>
+                    <label for="userName">Full Name:</label>
+                    <input type="text" id="userName" name="userName" required placeholder="John Doe">
+                </p>
+                <p>
+                    <label for="userEmail">Email Address:</label>
+                    <input type="email" id="userEmail" name="userEmail" required placeholder="name@example.com">
+                </p>
+                <p>
+                    <label for="message">Query:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Type your message here..."></textarea>
+                </p>
+                <p style="margin-bottom: 0;">
+                    <button type="submit">Submit Inquiry</button>
+                </p>
+            </form>
+        </section>
+
+    </main>
+</body>
+</html>

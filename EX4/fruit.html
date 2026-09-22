@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Event Handling Example</h2>
+
+    <!-- OnClick -->
+    <button id="clickbtn">Click Me</button>
+    <p id="click1"></p>
+
+    <!-- OnDoubleClick -->
+    <button id="doubleclick">Double Click</button>
+    <p id="click2"></p>
+
+    <!-- onMouseOver / onMouseOut -->
+    <div id="box">Move your mouse</div>
+    <p id="mouse1"></p>
+
+    <!-- Input Event -->
+    <input type="text" id="inputbox" placeholder="Type something here">
+    <p id="input1"></p>
+
+    <!-- OnFocus and onBlur -->
+    <input type="text" id="name" placeholder="Enter your name">
+    <p id="focus1"></p>
+
+    <!-- onChangeEvent -->
+    <select id="course">
+        <option value="">Select course</option>
+        <option value="Java">Java</option>
+        <option value="python">Python</option>
+        <option value="Webtechnology">WebTechnology</option>
+    </select>
+    <p id="changeEvent"></p>
+
+    <!-- Keyboard Events -->
+    <input type="text" id="keybox" placeholder="Press any key">
+    <p id="keyEvent"></p>
+
+    <!-- Form Event -->
+    <form id="myForm">
+        <input type="email" placeholder="Enter Email" required>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="formEvent"></p>
+
+    <script>
+
+        // Click Event
+        document.getElementById("clickbtn").addEventListener("click", function() {
+            document.getElementById("click1").innerHTML = "Button clicked";
+        });
+
+        // Double Click Event
+        document.getElementById("doubleclick").addEventListener("dblclick", function() {
+            document.getElementById("click2").innerHTML = "Button Double clicked";
+        });
+
+        // Mouse Over Event
+        document.getElementById("box").addEventListener("mouseover", function() {
+            document.getElementById("box").style.backgroundColor = "yellow";
+        });
+
+        // Mouse Out Event
+        document.getElementById("box").addEventListener("mouseout", function() {
+            document.getElementById("box").style.backgroundColor = "pink";
+        });
+
+        // Mouse Down Event
+        document.getElementById("box").addEventListener("mousedown", function() {
+            document.getElementById("mouse1").innerHTML = "mouse pressed";
+        });
+
+        // Mouse Up Event
+        document.getElementById("box").addEventListener("mouseup", function() {
+            document.getElementById("mouse1").innerHTML = "mouse released";
+        });
+
+        // Input Event
+        document.getElementById("inputbox").addEventListener("input", function() {
+            document.getElementById("input1").innerHTML = "User Name: " + this.value;
+        });
+
+        // Focus Event
+        document.getElementById("name").addEventListener("focus", function() {
+            document.getElementById("focus1").innerHTML = "Input is Focused";
+        });
+
+        // Blur Event
+        document.getElementById("name").addEventListener("blur", function() {
+            document.getElementById("focus1").innerHTML = "Input Focused Lost";
+        });
+
+        // Change Event
+        document.getElementById("course").addEventListener("change", function() {
+            document.getElementById("changeEvent").innerHTML =
+                "Selected Course: " + this.value;
+        });
+
+        // Key Down Event
+        document.getElementById("keybox").addEventListener("keydown", function() {
+            document.getElementById("keyEvent").innerHTML = "Key pressed";
+        });
+
+        // Key Up Event
+        document.getElementById("keybox").addEventListener("keyup", function() {
+            document.getElementById("keyEvent").innerHTML = "Key Released";
+        });
+
+        // Form Submit Event
+        document.getElementById("myForm").addEventListener("submit", function() {
+            document.getElementById("formEvent").innerHTML = "Form submitted";
+        });
+
+        // Resize Event
+        window.addEventListener("resize", function() {
+            console.log("Window size changed!");
+        });
+
+        // Scroll Event
+        window.addEventListener("scroll", function() {
+            console.log("page scrolling!");
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Placement Registration</title>
+    <style>
+        /* Simple and neat form layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 30px;
+        }
+
+        .form-container {
+            max-width: 450px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 25px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333333;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555555;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #004494;
+        }
+
+        /* Error message style */
+        .error-msg {
+            color: #cc0000;
+            font-size: 13px;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Placement Registration</h2>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        
+        <!-- Student Name -->
+        <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" placeholder="">
+            <div id="nameError" class="error-msg">Name must contain only letters and spaces (min 2 characters).</div>
+        </div>
+
+        <!-- Register Number -->
+        <div class="form-group">
+            <label for="regNo">Register Number:</label>
+            <input type="text" id="regNo" placeholder="">
+            <div id="regError" class="error-msg">Register number must be exactly 12 numeric digits.</div>
+        </div>
+
+        <!-- Email Address -->
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" placeholder="">
+            <div id="emailError" class="error-msg">Please enter a valid email address.</div>
+        </div>
+
+        <!-- Mobile Number -->
+        <div class="form-group">
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" placeholder="">
+            <div id="mobileError" class="error-msg">Mobile number must be a valid 10-digit number starting with 6-9.</div>
+        </div>
+
+        <!-- CGPA -->
+        <div class="form-group">
+            <label for="cgpa">Current CGPA:</label>
+            <input type="text" id="cgpa" placeholder="">
+            <div id="cgpaError" class="error-msg">Enter a valid CGPA between 0.00 and 10.00 (up to 2 decimals).</div>
+        </div>
+
+        <button type="submit">Register Now</button>
+    </form>
+</div>
+
+<script>
+function validateForm() {
+    // Flag to track form validity status
+    let isValid = true;
+
+    // 1. Name Validation (Letters and spaces only, 2 to 30 characters)
+    const nameInput = document.getElementById("fullName").value.trim();
+    const nameRegex = /^[a-zA-Z\s]{2,30}$/;
+    if (!nameRegex.test(nameInput)) {
+        document.getElementById("nameError").style.display = "block";
+        isValid = false;
+    } else {
+        document.getElementById("nameError").style.display = "none";
+    }
+
+    // 2. Register Number Validation (Exactly 12 digits)
+    const regInput = document.getElementById("regNo").value.trim();
+    const regRegex = /^\d{12}$/;
+    if (!regRegex.test(regInput)) {
+        document.getElementById("regError").style.display = "block";
+        isValid = false;
+    } else {
+        document.getElementById("regError").style.display = "none";
+    }
+
+    // 3. Email Validation
+    const emailInput = document.getElementById("email").value.trim();
+    const emailRegex = /^[a-zA-Z0-0._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(emailInput)) {
+        document.getElementById("emailError").style.display = "block";
+        isValid = false;
+    } else {
+        document.getElementById("emailError").style.display = "none";
+    }
+
+    // 4. Mobile Number Validation (10 digits, starts with 6, 7, 8, or 9)
+    const mobileInput = document.getElementById("mobile").value.trim();
+    const mobileRegex = /^[6-9]\d{9}$/;
+    if (!mobileRegex.test(mobileInput)) {
+        document.getElementById("mobileError").style.display = "block";
+        isValid = false;
+    } else {
+        document.getElementById("mobileError").style.display = "none";
+    }
+
+    // 5. CGPA Validation (Matches 0-9 followed by optional decimal, or 10.00 max)
+    const cgpaInput = document.getElementById("cgpa").value.trim();
+    const cgpaRegex = /^([0-9](\.\d{1,2})?|10(\.0{1,2})?)$/;
+    if (!cgpaRegex.test(cgpaInput)) {
+        document.getElementById("cgpaError").style.display = "block";
+        isValid = false;
+    } else {
+        document.getElementById("cgpaError").style.display = "none";
+    }
+
+    // If all inputs match their respective regular expressions, alert success
+    if (isValid) {
+        alert("Registration Form Submitted Successfully!");
+        document.getElementById("registrationForm").reset();
+        return true; 
+    }
+
+    return false; // Blocks form submission if errors exist
+}
+</script>
+
+</body>
+</html>
