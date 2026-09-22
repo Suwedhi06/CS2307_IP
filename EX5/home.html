@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Online Examination System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<div class="page-header">
+
+    <h1>Online Examination System</h1>
+
+    <p>Web Technology Examination</p>
+
+</div>
+
+
+<div class="form-container">
+
+    <div class="form-card">
+
+        <h2>Student Details</h2>
+
+        <p>
+            Please enter your details before starting
+            the examination.
+        </p>
+
+
+        <form id="studentForm">
+
+
+            <div class="form-group">
+
+                <label for="studentName">
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter your full name"
+                    maxlength="50"
+                >
+
+                <div
+                    id="nameError"
+                    class="error">
+                    Please enter your name.
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="rollNumber">
+                    Roll Number
+                </label>
+
+                <input
+                    type="text"
+                    id="rollNumber"
+                    placeholder="Enter your roll number"
+                    maxlength="20"
+                >
+
+                <div
+                    id="rollError"
+                    class="error">
+                    Please enter your roll number.
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="button form-submit">
+
+                Start Examination
+
+            </button>
+
+
+        </form>
+
+
+        <a
+            href="home.html"
+            class="back-link">
+
+            Online Examination System
+
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+document
+    .getElementById("studentForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        let name =
+            document
+                .getElementById("studentName")
+                .value
+                .trim();
+
+
+        let roll =
+            document
+                .getElementById("rollNumber")
+                .value
+                .trim();
+
+
+        let nameError =
+            document.getElementById("nameError");
+
+
+        let rollError =
+            document.getElementById("rollError");
+
+
+        nameError.style.display = "none";
+        rollError.style.display = "none";
+
+
+        let valid = true;
+
+
+        /* Name validation */
+
+        if (name === "") {
+
+            nameError.innerHTML =
+                "Please enter your name.";
+
+            nameError.style.display = "block";
+
+            valid = false;
+
+        }
+        else if (name.length < 3) {
+
+            nameError.innerHTML =
+                "Name must contain at least 3 characters.";
+
+            nameError.style.display = "block";
+
+            valid = false;
+
+        }
+        else if (!/^[A-Za-z ]+$/.test(name)) {
+
+            nameError.innerHTML =
+                "Name can contain only letters and spaces.";
+
+            nameError.style.display = "block";
+
+            valid = false;
+
+        }
+
+
+        /* Roll number validation */
+
+        if (roll === "") {
+
+            rollError.innerHTML =
+                "Please enter your roll number.";
+
+            rollError.style.display = "block";
+
+            valid = false;
+
+        }
+        else if (!/^[A-Za-z0-9-]+$/.test(roll)) {
+
+            rollError.innerHTML =
+                "Roll number can contain letters, numbers and hyphen only.";
+
+            rollError.style.display = "block";
+
+            valid = false;
+
+        }
+
+
+        if (!valid) {
+            return;
+        }
+
+
+        /* Save student information */
+
+        localStorage.setItem(
+            "studentName",
+            name
+        );
+
+        localStorage.setItem(
+            "rollNumber",
+            roll
+        );
+
+
+        /* Go to examination */
+
+        window.location.href =
+            "exam.html";
+
+    });
+
+</script>
+
+
+</body>
+
+</html>

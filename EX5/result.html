@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Examination Result</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<div class="page-header">
+
+    <h1>Examination Result</h1>
+
+    <p>Your examination has been submitted successfully</p>
+
+</div>
+
+
+<div class="result-container">
+
+    <div class="result-card">
+
+
+        <!-- Student Information -->
+
+        <div class="result-student">
+
+            <h2 id="studentName"></h2>
+
+            <p>
+                Roll Number:
+                <strong id="rollNumber"></strong>
+            </p>
+
+        </div>
+
+
+        <!-- Score -->
+
+        <div class="score-box">
+
+            <h2 id="score">
+                0 / 10
+            </h2>
+
+            <p>
+                Final Score
+            </p>
+
+        </div>
+
+
+        <!-- Status -->
+
+        <div
+            id="status"
+            class="status">
+        </div>
+
+
+        <!-- Answers -->
+
+        <div id="answers"></div>
+
+
+        <!-- Buttons -->
+
+        <div class="result-buttons">
+
+            <a
+                href="home.html"
+                class="button">
+
+                Take Exam Again
+
+            </a>
+
+
+            <a
+                href="home.html"
+                class="button home-button">
+
+                Home
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+<script>
+
+/* Get student information */
+
+let studentName =
+    localStorage.getItem("studentName");
+
+
+let rollNumber =
+    localStorage.getItem("rollNumber");
+
+
+let score =
+    parseInt(
+        localStorage.getItem("score")
+    );
+
+
+/* Check if result exists */
+
+if (
+    !studentName ||
+    !rollNumber ||
+    isNaN(score)
+) {
+
+    window.location.href =
+        "home.html";
+
+}
+
+
+/* Display student */
+
+document.getElementById("studentName")
+    .textContent =
+    studentName;
+
+
+document.getElementById("rollNumber")
+    .textContent =
+    rollNumber;
+
+
+/* Display score */
+
+document.getElementById("score")
+    .textContent =
+    score + " / 10";
+
+
+/* Performance status */
+
+let status =
+    document.getElementById("status");
+
+
+if (score >= 8) {
+
+    status.textContent =
+        "Excellent Performance";
+
+    status.style.color =
+        "#16a34a";
+
+}
+else if (score >= 5) {
+
+    status.textContent =
+        "Good Performance";
+
+    status.style.color =
+        "#2563eb";
+
+}
+else {
+
+    status.textContent =
+        "Keep Practicing";
+
+    status.style.color =
+        "#f59e0b";
+
+}
+
+
+/* Answer information */
+
+let answers = [
+
+    {
+        number: 1,
+        answer: localStorage.getItem("q1"),
+        correct: "HTML"
+    },
+
+    {
+        number: 2,
+        answer: localStorage.getItem("q2"),
+        correct: "<p>"
+    },
+
+    {
+        number: 3,
+        answer: localStorage.getItem("q3"),
+        correct: "HyperText Markup Language"
+    },
+
+    {
+        number: 4,
+        answer: localStorage.getItem("q4"),
+        correct: "CSS"
+    },
+
+    {
+        number: 5,
+        answer: localStorage.getItem("q5"),
+        correct: "<h1>"
+    },
+
+    {
+        number: 6,
+        answer: localStorage.getItem("q6"),
+        correct: "color"
+    },
+
+    {
+        number: 7,
+        answer: localStorage.getItem("q7"),
+        correct: "let"
+    },
+
+    {
+        number: 8,
+        answer: localStorage.getItem("q8"),
+        correct: "href"
+    },
+
+    {
+        number: 9,
+        answer: localStorage.getItem("q9"),
+        correct: "JavaScript"
+    },
+
+    {
+        number: 10,
+        answer: localStorage.getItem("q10"),
+        correct: "Cascading Style Sheets"
+    }
+
+];
+
+
+/* Display answers */
+
+let answerContainer =
+    document.getElementById("answers");
+
+
+answers.forEach(function(item) {
+
+
+    let userAnswer =
+        item.answer || "Not answered";
+
+
+    let isCorrect;
+
+
+    /*
+       For questions 3, 4 and 10,
+       compare text answers.
+    */
+
+    isCorrect =
+        userAnswer
+            .trim()
+            .toLowerCase()
+            .replace(/\s+/g, " ")
+        ===
+        item.correct
+            .replace("<", "")
+            .replace(">", "")
+            .trim()
+            .toLowerCase()
+            .replace(/\s+/g, " ");
+
+
+    /*
+       Special handling for HTML tag answers
+    */
+
+    if (item.number === 2) {
+
+        isCorrect =
+            userAnswer
+                .toLowerCase()
+                === "p";
+
+    }
+
+
+    if (item.number === 5) {
+
+        isCorrect =
+            userAnswer
+                .toLowerCase()
+                === "h1";
+
+    }
+
+
+    if (item.number === 1) {
+
+        isCorrect =
+            userAnswer
+                .toLowerCase()
+                === "html";
+
+    }
+
+
+    if (item.number === 6) {
+
+        isCorrect =
+            userAnswer
+                .toLowerCase()
+                === "color";
+
+    }
+
+
+    if (item.number === 7) {
+
+        isCorrect =
+            userAnswer
+                .toLowerCase()
+                === "let";
+
+    }
+
+
+    if (item.number === 8) {
+
+        isCorrect =
+            userAnswer
+                .toLowerCase()
+                === "href";
+
+    }
+
+
+    if (item.number === 9) {
+
+        isCorrect =
+            userAnswer
+                .toLowerCase()
+                === "javascript";
+
+    }
+
+
+    let div =
+        document.createElement("div");
+
+
+    div.className =
+        "answer-result";
+
+
+    div.innerHTML =
+
+        "<h3>Question "
+        + item.number
+        + "</h3>"
+
+
+        +
+
+        "<p><strong>Your Answer:</strong> "
+        + escapeHTML(userAnswer)
+        + "</p>"
+
+
+        +
+
+
+        (
+            isCorrect
+
+            ?
+
+            "<p class='correct'>Correct Answer</p>"
+
+            :
+
+            "<p class='wrong'>Incorrect Answer</p>" +
+
+            "<p class='correct-answer'><strong>Correct Answer:</strong> "
+            + escapeHTML(item.correct)
+            + "</p>"
+        );
+
+
+    answerContainer.appendChild(div);
+
+});
+
+
+/*
+   Prevent HTML entered by the student
+   from being displayed as actual HTML.
+*/
+
+function escapeHTML(text) {
+
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Online Examination</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<div class="page-header">
+
+    <h1>Online Examination</h1>
+
+    <p>Web Technology Examination</p>
+
+</div>
+
+
+<div class="exam-container">
+
+
+    <!-- Student Information -->
+
+    <div class="student-info">
+
+        <h2>Student Information</h2>
+
+        <div class="student-details">
+
+            <span>
+                Name:
+                <strong id="displayName"></strong>
+            </span>
+
+            <span>
+                Roll No:
+                <strong id="displayRoll"></strong>
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Exam Information -->
+
+    <div class="exam-info">
+
+        <h2>Web Technology Quiz</h2>
+
+        <p>
+            Answer all 10 questions carefully.
+            Each question carries 1 mark.
+        </p>
+
+    </div>
+
+
+    <form id="examForm">
+
+
+        <!-- Question 1 -->
+
+        <div class="question">
+
+            <span class="question-number">
+                Question 01
+            </span>
+
+            <h3>
+                Which language is used to create
+                the structure of a web page?
+            </h3>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q1"
+                    value="HTML">
+
+                HTML
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q1"
+                    value="Java">
+
+                Java
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q1"
+                    value="Python">
+
+                Python
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q1"
+                    value="C">
+
+                C
+            </label>
+
+
+            <div
+                id="error1"
+                class="question-error">
+
+                Please answer Question 1.
+
+            </div>
+
+        </div>
+
+
+        <!-- Question 2 -->
+
+        <div class="question">
+
+            <span class="question-number">
+                Question 02
+            </span>
+
+            <h3>
+                Which HTML tag is used to create
+                a paragraph?
+            </h3>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q2"
+                    value="p">
+
+                &lt;p&gt;
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q2"
+                    value="h1">
+
+                &lt;h1&gt;
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q2"
+                    value="br">
+
+                &lt;br&gt;
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q2"
+                    value="body">
+
+                &lt;body&gt;
+            </label>
+
+
+            <div
+                id="error2"
+                class="question-error">
+
+                Please answer Question 2.
+
+            </div>
+
+        </div>
+
+
+        <!-- Question 3 -->
+
+        <div class="question">
+
+            <span class="question-number">
+                Question 03
+            </span>
+
+            <h3>
+                What does HTML stand for?
+            </h3>
+
+
+            <input
+                type="text"
+                id="q3"
+                class="text-answer"
+                placeholder="Enter your answer"
+                maxlength="60"
+            >
+
+
+            <div
+                id="error3"
+                class="question-error">
+
+                Please answer Question 3.
+
+            </div>
+
+        </div>
+
+
+        <!-- Question 4 -->
+
+        <div class="question">
+
+            <span class="question-number">
+                Question 04
+            </span>
+
+            <h3>
+                Which language is used to
+                style HTML pages?
+            </h3>
+
+
+            <input
+                type="text"
+                id="q4"
+                class="text-answer"
+                placeholder="Enter your answer"
+                maxlength="30"
+            >
+
+
+            <div
+                id="error4"
+                class="question-error">
+
+                Please answer Question 4.
+
+            </div>
+
+        </div>
+
+
+        <!-- Question 5 -->
+
+        <div class="question">
+
+            <span class="question-number">
+                Question 05
+            </span>
+
+            <h3>
+                Which HTML tag creates
+                the largest heading?
+            </h3>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q5"
+                    value="h1">
+
+                &lt;h1&gt;
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q5"
+                    value="h6">
+
+                &lt;h6&gt;
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q5"
+                    value="head">
+
+                &lt;head&gt;
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q5"
+                    value="title">
+
+                &lt;title&gt;
+            </label>
+
+
+            <div
+                id="error5"
+                class="question-error">
+
+                Please answer Question 5.
+
+            </div>
+
+        </div>
+
+
+        <!-- Question 6 -->
+
+        <div class="question">
+
+            <span class="question-number">
+                Question 06
+            </span>
+
+            <h3>
+                Which CSS property is used
+                to change text color?
+            </h3>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q6"
+                    value="color">
+
+                color
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q6"
+                    value="background">
+
+                background
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q6"
+                    value="font">
+
+                font
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q6"
+                    value="text">
+
+                text
+            </label>
+
+
+            <div
+                id="error6"
+                class="question-error">
+
+                Please answer Question 6.
+
+            </div>
+
+        </div>
+
+
+        <!-- Question 7 -->
+
+        <div class="question">
+
+            <span class="question-number">
+                Question 07
+            </span>
+
+            <h3>
+                Which keyword is used to declare
+                a variable in JavaScript?
+            </h3>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q7"
+                    value="let">
+
+                let
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q7"
+                    value="define">
+
+                define
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q7"
+                    value="variable">
+
+                variable
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q7"
+                    value="int">
+
+                int
+            </label>
+
+
+            <div
+                id="error7"
+                class="question-error">
+
+                Please answer Question 7.
+
+            </div>
+
+        </div>
+
+
+        <!-- Question 8 -->
+
+        <div class="question">
+
+            <span class="question-number">
+                Question 08
+            </span>
+
+            <h3>
+                Which HTML attribute specifies
+                the URL of a link?
+            </h3>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q8"
+                    value="href">
+
+                href
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q8"
+                    value="src">
+
+                src
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q8"
+                    value="link">
+
+                link
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q8"
+                    value="url">
+
+                url
+            </label>
+
+
+            <div
+                id="error8"
+                class="question-error">
+
+                Please answer Question 8.
+
+            </div>
+
+        </div>
+
+
+        <!-- Question 9 -->
+
+        <div class="question">
+
+            <span class="question-number">
+                Question 09
+            </span>
+
+            <h3>
+                Which technology is used to add
+                interactivity to web pages?
+            </h3>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q9"
+                    value="JavaScript">
+
+                JavaScript
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q9"
+                    value="HTML">
+
+                HTML
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q9"
+                    value="CSS">
+
+                CSS
+            </label>
+
+
+            <label class="option">
+                <input
+                    type="radio"
+                    name="q9"
+                    value="SQL">
+
+                SQL
+            </label>
+
+
+            <div
+                id="error9"
+                class="question-error">
+
+                Please answer Question 9.
+
+            </div>
+
+        </div>
+
+
+        <!-- Question 10 -->
+
+        <div class="question">
+
+            <span class="question-number">
+                Question 10
+            </span>
+
+            <h3>
+                What does CSS stand for?
+            </h3>
+
+
+            <input
+                type="text"
+                id="q10"
+                class="text-answer"
+                placeholder="Enter your answer"
+                maxlength="60"
+            >
+
+
+            <div
+                id="error10"
+                class="question-error">
+
+                Please answer Question 10.
+
+            </div>
+
+        </div>
+
+
+        <!-- Submit -->
+
+        <div class="submit-area">
+
+            <p>
+                Please answer all questions before
+                submitting your examination.
+            </p>
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                Submit Examination
+
+            </button>
+
+        </div>
+
+
+    </form>
+
+</div>
+<script>
+
+/* Display student information */
+
+let studentName =
+    localStorage.getItem("studentName");
+
+let rollNumber =
+    localStorage.getItem("rollNumber");
+
+
+/* Prevent direct access without student details */
+
+if (!studentName || !rollNumber) {
+
+    window.location.href =
+        "home.html";
+
+}
+
+
+document.getElementById("displayName")
+    .textContent = studentName;
+
+
+document.getElementById("displayRoll")
+    .textContent = rollNumber;
+
+
+/* Examination validation */
+
+document
+    .getElementById("examForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        let valid = true;
+
+
+        /* Hide all errors first */
+
+        for (let i = 1; i <= 10; i++) {
+
+            document
+                .getElementById("error" + i)
+                .style.display = "none";
+
+        }
+
+
+        /* Question 1 */
+
+        let q1 =
+            document.querySelector(
+                'input[name="q1"]:checked'
+            );
+
+        if (!q1) {
+
+            document
+                .getElementById("error1")
+                .style.display = "block";
+
+            valid = false;
+
+        }
+
+
+        /* Question 2 */
+
+        let q2 =
+            document.querySelector(
+                'input[name="q2"]:checked'
+            );
+
+        if (!q2) {
+
+            document
+                .getElementById("error2")
+                .style.display = "block";
+
+            valid = false;
+
+        }
+
+
+        /* Question 3 */
+
+        let q3 =
+            document
+                .getElementById("q3")
+                .value
+                .trim();
+
+        if (q3 === "") {
+
+            document
+                .getElementById("error3")
+                .style.display = "block";
+
+            valid = false;
+
+        }
+
+
+        /* Question 4 */
+
+        let q4 =
+            document
+                .getElementById("q4")
+                .value
+                .trim();
+
+        if (q4 === "") {
+
+            document
+                .getElementById("error4")
+                .style.display = "block";
+
+            valid = false;
+
+        }
+
+
+        /* Question 5 */
+
+        let q5 =
+            document.querySelector(
+                'input[name="q5"]:checked'
+            );
+
+        if (!q5) {
+
+            document
+                .getElementById("error5")
+                .style.display = "block";
+
+            valid = false;
+
+        }
+
+
+        /* Question 6 */
+
+        let q6 =
+            document.querySelector(
+                'input[name="q6"]:checked'
+            );
+
+        if (!q6) {
+
+            document
+                .getElementById("error6")
+                .style.display = "block";
+
+            valid = false;
+
+        }
+
+
+        /* Question 7 */
+
+        let q7 =
+            document.querySelector(
+                'input[name="q7"]:checked'
+            );
+
+        if (!q7) {
+
+            document
+                .getElementById("error7")
+                .style.display = "block";
+
+            valid = false;
+
+        }
+
+
+        /* Question 8 */
+
+        let q8 =
+            document.querySelector(
+                'input[name="q8"]:checked'
+            );
+
+        if (!q8) {
+
+            document
+                .getElementById("error8")
+                .style.display = "block";
+
+            valid = false;
+
+        }
+
+
+        /* Question 9 */
+
+        let q9 =
+            document.querySelector(
+                'input[name="q9"]:checked'
+            );
+
+        if (!q9) {
+
+            document
+                .getElementById("error9")
+                .style.display = "block";
+
+            valid = false;
+
+        }
+
+
+        /* Question 10 */
+
+        let q10 =
+            document
+                .getElementById("q10")
+                .value
+                .trim();
+
+        if (q10 === "") {
+
+            document
+                .getElementById("error10")
+                .style.display = "block";
+
+            valid = false;
+
+        }
+
+
+        /* Stop submission if anything is missing */
+
+        if (!valid) {
+
+            let firstError =
+                document.querySelector(
+                    ".question-error[style*='block']"
+                );
+
+            if (firstError) {
+
+                firstError
+                    .parentElement
+                    .scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+            }
+
+            return;
+
+        }
+
+
+        /* Calculate score */
+
+        let score = 0;
+
+
+        if (q1.value === "HTML") {
+            score++;
+        }
+
+
+        if (q2.value === "p") {
+            score++;
+        }
+
+
+        if (
+            q3
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                ===
+            "hypertext markup language"
+        ) {
+            score++;
+        }
+
+
+        if (
+            q4
+                .toLowerCase()
+                .trim()
+                === "css"
+        ) {
+            score++;
+        }
+
+
+        if (q5.value === "h1") {
+            score++;
+        }
+
+
+        if (q6.value === "color") {
+            score++;
+        }
+
+
+        if (q7.value === "let") {
+            score++;
+        }
+
+
+        if (q8.value === "href") {
+            score++;
+        }
+
+
+        if (
+            q9.value.toLowerCase()
+            === "javascript"
+        ) {
+            score++;
+        }
+
+
+        if (
+            q10
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+            ===
+            "cascading style sheets"
+        ) {
+            score++;
+        }
+
+
+        /* Save result */
+
+        localStorage.setItem(
+            "score",
+            score
+        );
+
+
+        localStorage.setItem(
+            "q1",
+            q1.value
+        );
+
+
+        localStorage.setItem(
+            "q2",
+            q2.value
+        );
+
+
+        localStorage.setItem(
+            "q3",
+            q3
+        );
+
+
+        localStorage.setItem(
+            "q4",
+            q4
+        );
+
+
+        localStorage.setItem(
+            "q5",
+            q5.value
+        );
+
+
+        localStorage.setItem(
+            "q6",
+            q6.value
+        );
+
+
+        localStorage.setItem(
+            "q7",
+            q7.value
+        );
+
+
+        localStorage.setItem(
+            "q8",
+            q8.value
+        );
+
+
+        localStorage.setItem(
+            "q9",
+            q9.value
+        );
+
+
+        localStorage.setItem(
+            "q10",
+            q10
+        );
+
+
+        /* Go to result */
+
+        window.location.href =
+            "result.html";
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
