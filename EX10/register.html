@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal - Candidate Registration</title>
+    <style>
+        /* Modern Reset and Font Stack */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Clean gradient background */
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        /* Modern card layout container */
+        .form-container {
+            width: 100%;
+            max-width: 480px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        /* Standardized input fields */
+        input[type="text"], 
+        input[type="password"], 
+        input[type="email"], 
+        select {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 15px;
+            color: #2d3748;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            transition: all 0.2s ease-in-out;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: #a0aec0;
+        }
+
+        /* Interactive blue focus ring */
+        input:focus, select:focus {
+            border-color: #3182ce;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+        }
+
+        /* Interactive submit action button */
+        input[type="submit"] {
+            width: 100%;
+            margin-top: 32px;
+            padding: 14px;
+            background-color: #3182ce;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2b6cb0;
+        }
+
+        input[type="submit"]:active {
+            transform: scale(0.98);
+        }
+
+        /* Smooth drop arrow pattern override for select box */
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://w3.org' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            background-size: 14px;
+            padding-right: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Candidate Registration</h2>
+        
+        <!-- Submits form values to the backend server validator -->
+        <form action="register.php" method="POST">
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username" placeholder="Enter username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Min 8 chars, 1 Upper, 1 Digit" required>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+            <label for="education">Highest Education:</label>
+            <input type="text" id="education" name="education" placeholder="e.g., B.E., MCA" required>
+
+            <label for="experience">Experience Level:</label>
+            <select id="experience" name="experience" required>
+                <option value="" disabled selected>Select your experience</option>
+                <option value="Fresher">Fresher / Entry Level</option>
+                <option value="1-3 Years">1 - 3 Years</option>
+                <option value="3-5 Years">3 - 5 Years</option>
+                <option value="5+ Years">5+ Years</option>
+            </select>
+
+            <label for="skills">Key Skills:</label>
+            <input type="text" id="skills" name="skills" placeholder="e.g., Java, HTML, SQL" required>
+
+            <label for="ccnumber">Credit Card Number:</label>
+            <input type="text" id="ccnumber" name="ccnumber" placeholder="16-digit card number" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="name@example.com" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" placeholder="10-digit number" required>
+
+            <input type="submit" value="Register Profile">
+        </form>
+    </div>
+
+</body>
+</html>
