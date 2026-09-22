@@ -1,0 +1,63 @@
+CS2307 – INTERNET PROGRAMMING LAB
+
+TITLE
+Student Feedback Management System
+
+ABSTRACT
+The Student Feedback Management System is a dynamic website developed using HTML, CSS, JavaScript, PHP and MySQL. The system allows students to register, log in and submit feedback about courses and faculty members. The submitted feedback is stored in a MySQL database. An administrator can log in and view the collected feedback through a dashboard.
+
+INTRODUCTION
+Student feedback is useful for understanding students' opinions about courses and teaching. Collecting feedback using paper forms can make storing and checking the information difficult. This project provides a simple web-based system for collecting and managing student feedback.
+
+OBJECTIVES
+1. To develop a simple dynamic website using PHP and MySQL.
+2. To provide a login system for students and administrators.
+3. To allow students to submit course feedback.
+4. To store feedback details in a MySQL database.
+5. To display submitted feedback to the administrator.
+6. To use JavaScript for client-side form validation.
+
+MODULES
+1. Home Page
+2. Student Registration
+3. Student Login
+4. Feedback Form
+5. My Feedback
+6. Admin Login
+7. Admin Dashboard
+8. MySQL Database
+
+METHODOLOGY / APPROACH
+The student first registers or logs in to the website. After login, the student opens the feedback form and selects a course, enters the faculty name, selects a rating and writes comments. JavaScript checks the form before it is submitted. PHP receives the information and stores it in MySQL. The student can view previous feedback. The administrator can log in and view all feedback records.
+
+IMPLEMENTATION
+Frontend:
+HTML and CSS are used to create the pages and design the interface.
+
+JavaScript:
+JavaScript is used to check required fields before feedback is submitted.
+
+Backend:
+PHP handles login, registration, feedback processing and database operations.
+
+Database:
+MySQL stores student, admin and feedback information.
+
+SCREENSHOTS
+Take screenshots of:
+1. Home page
+2. Student registration
+3. Student login
+4. Feedback form
+5. Successful feedback submission
+6. My feedback page
+7. Admin login
+8. Admin dashboard
+
+REFERENCES
+1. PHP Documentation
+2. MySQL Documentation
+3. MDN Web Docs
+
+CONCLUSION
+The Student Feedback Management System provides a simple way to collect and manage student feedback. The project demonstrates the use of HTML, CSS, JavaScript, PHP and MySQL together to create a dynamic web application.
