@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration Form</title>
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 450px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: darkgreen;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>User Registration Form</h2>
+
+    <form action="display.jsp" method="post">
+
+        <label>User Name:</label>
+        <input type="text" name="username" required>
+
+        <label>Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>Password:</label>
+        <input type="password" name="password" required>
+
+        <label>Credit Card Number:</label>
+        <input type="text" name="cardnumber" required>
+
+        <label>Mobile Number:</label>
+        <input type="tel" name="mobile" required>
+
+        <label>Job Profile Title:</label>
+        <input type="text" name="jobtitle" required>
+
+        <label>Total Experience:</label>
+        <input type="number" name="experience" required>
+
+        <input type="submit" value="Register">
+
+    </form>
+
+</div>
+
+</body>
+</html>
